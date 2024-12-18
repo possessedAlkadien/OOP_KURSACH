@@ -163,10 +163,12 @@ class Bot():
                     if nextLessonFlag == True:
                         resultNext.append(lesson)
                     result.append(lesson)
-                for lesson in result:
-                    if int(lesson[3]) == weekNUM:
-                        await update.message.reply_text(f"Неделя: {lesson[3]},\nПредмет: {lesson[4]}, \nНачало: {lesson[5]}, \nКонец: {lesson[6]}, \nПреподаватель: {lesson[0]}")
-                    else:
+                if weekNUM != 0:
+                    for lesson in result:
+                        if int(lesson[3]) == weekNUM:
+                            await update.message.reply_text(f"Неделя: {lesson[3]},\nПредмет: {lesson[4]}, \nНачало: {lesson[5]}, \nКонец: {lesson[6]}, \nПреподаватель: {lesson[0]}")
+                else:
+                    for lesson in result:
                         await update.message.reply_text(f"Неделя: {lesson[3]},\nПредмет: {lesson[4]}, \nНачало: {lesson[5]}, \nКонец: {lesson[6]}, \nПреподаватель: {lesson[0]}")
 
 
