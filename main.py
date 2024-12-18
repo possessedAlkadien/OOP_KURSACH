@@ -166,6 +166,8 @@ class Bot():
                 for lesson in result:
                     if int(lesson[3]) == weekNUM:
                         await update.message.reply_text(f"Неделя: {lesson[3]},\nПредмет: {lesson[4]}, \nНачало: {lesson[5]}, \nКонец: {lesson[6]}, \nПреподаватель: {lesson[0]}")
+                    else:
+                        await update.message.reply_text(f"Неделя: {lesson[3]},\nПредмет: {lesson[4]}, \nНачало: {lesson[5]}, \nКонец: {lesson[6]}, \nПреподаватель: {lesson[0]}")
 
 
                 if nextLessonFlag == True and matches[datetime.weekday(now)] == match:
